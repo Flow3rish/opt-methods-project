@@ -1,0 +1,81 @@
+
+--- Job potraviny-opt-stredni-hodnoty.gms Start 05/02/21 06:53:32 34.2.0 r6925a71 WEX-WEI x86 64bit/MS Windows
+--- Applying:
+    C:\GAMS\34\gmsprmNT.txt
+--- GAMS Parameters defined
+    Input C:\Users\ironl\Documents\gamsdir\projdir\potraviny-opt-stredni-hodnoty.gms
+    PageSize 0
+    ScrDir C:\Users\ironl\Documents\gamsdir\projdir\225a\
+    SysDir C:\GAMS\34\
+    LogOption 3
+    ErrMsg 1
+    ErrorLog 99
+    IDE 1
+    LstTitleLeftAligned 1
+Licensee: GAMS Demo license for Vit Chrubasik            G210215|0002CO-GEN
+          VSB Technical University of Ostrava, Czech Republic      DL032189
+          C:\Users\ironl\Documents\GAMS\gamslice.txt
+          vit.chrubasik@protonmail.com, Vit Chrubasik                      
+          Demo license for demonstration and instructional purposes only
+GAMS 34.2.0   Copyright (C) 1987-2021 GAMS Development. All rights reserved
+--- Starting compilation
+--- potraviny-opt-stredni-hodnoty.gms(13) 3 Mb
+--- call csv2gdx potraviny.csv id=nutr index=1 values=2..5 useHeader=y trace=0 output=potraviny.gdx
+--- potraviny-opt-stredni-hodnoty.gms(16) 3 Mb
+--- GDXin=C:\Users\ironl\Documents\gamsdir\projdir\potraviny.gdx
+--- GDX File ($gdxIn) C:\Users\ironl\Documents\gamsdir\projdir\potraviny.gdx
+--- potraviny-opt-stredni-hodnoty.gms(25) 3 Mb
+--- call csv2gdx potraviny.csv id=v index=1 values=7 useHeader=y trace=0 output=ceny-velkoobchod.gdx
+--- potraviny-opt-stredni-hodnoty.gms(28) 3 Mb
+--- GDXin=C:\Users\ironl\Documents\gamsdir\projdir\ceny-velkoobchod.gdx
+--- GDX File ($gdxIn) C:\Users\ironl\Documents\gamsdir\projdir\ceny-velkoobchod.gdx
+--- potraviny-opt-stredni-hodnoty.gms(35) 3 Mb
+--- call csv2gdx potraviny.csv id=m index=1 values=8 useHeader=y trace=0 output=ceny-maloobchod.gdx
+--- potraviny-opt-stredni-hodnoty.gms(38) 3 Mb
+--- GDXin=C:\Users\ironl\Documents\gamsdir\projdir\ceny-maloobchod.gdx
+--- GDX File ($gdxIn) C:\Users\ironl\Documents\gamsdir\projdir\ceny-maloobchod.gdx
+--- potraviny-opt-stredni-hodnoty.gms(44) 3 Mb
+--- call csv2gdx potraviny.csv id=sug index=1 values=6 useHeader=y trace=0 output=sugar.gdx
+--- potraviny-opt-stredni-hodnoty.gms(47) 3 Mb
+--- GDXin=C:\Users\ironl\Documents\gamsdir\projdir\sugar.gdx
+--- GDX File ($gdxIn) C:\Users\ironl\Documents\gamsdir\projdir\sugar.gdx
+--- potraviny-opt-stredni-hodnoty.gms(92) 3 Mb
+--- Starting execution: elapsed 0:00:00.091
+--- potraviny-opt-stredni-hodnoty.gms(51) 4 Mb
+--- Generating LP model potraviny
+--- potraviny-opt-stredni-hodnoty.gms(92) 4 Mb
+---   31 rows  55 columns  459 non-zeroes
+--- Executing CPLEX (Solvelink=2): elapsed 0:00:00.097
+
+IBM ILOG CPLEX   34.2.0 r6925a71 Released Feb 05, 2021 WEI x86 64bit/MS Window
+
+--- *** This solver runs with a demo license. No commercial use.
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.0 link memory 0.00 Mb (peak 0.01 Mb)
+--- Starting Cplex
+
+Version identifier: 20.1.0.0 | 2020-11-10 | 9bedb6d68
+CPXPARAM_Advance                                 0
+CPXPARAM_Threads                                 1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+Tried aggregator 1 time.
+LP Presolve eliminated 5 rows and 1 columns.
+Reduced LP has 25 rows, 54 columns, and 430 nonzeros.
+Presolve time = 0.00 sec. (0.14 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual objective     =            27.608843
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.23 ticks)
+
+
+Optimal solution found
+Objective:          141.485911
+
+--- Reading solution for model potraviny
+*** Status: Normal completion
+--- Job potraviny-opt-stredni-hodnoty.gms Stop 05/02/21 06:53:32 elapsed 0:00:00.138

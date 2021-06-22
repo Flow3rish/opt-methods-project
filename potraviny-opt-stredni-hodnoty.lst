@@ -1,0 +1,628 @@
+GAMS 34.2.0  r6925a71 Released Feb  5, 2021 WEX-WEI x86 64bit/MS Windows - 05/02/21 06:54:50 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1   
+FUNCLIBIN  stolib stodclib
+Function Library stolib
+Random deviates, probability density function, cumulative distribution function, inverse cumulative distribution function
+GAMS Development Corporation
+
+Mod. Function                          Description
+Type
+
+none SetSeed(SEED)                     Define the seed for random number generator
+none dUniform(LOW,HIGH)                Uniform distribution
+DNLP pdfUniform(x,LOW,HIGH)            Probability density function for uniform distribution
+DNLP cdfUniform(x,LOW,HIGH)            Cumulative distribution function for uniform distribution
+DNLP icdfUniform(x,LOW,HIGH)           Inverse cumulative distribution function for uniform distribution
+none dNormal(MEAN,STD_DEV)             Normal distribution
+NLP  pdfNormal(x,MEAN,STD_DEV)         Probability density function for normal distribution
+NLP  cdfNormal(x,MEAN,STD_DEV)         Cumulative distribution function for normal distribution
+NLP  icdfNormal(x,MEAN,STD_DEV)        Inverse cumulative distribution function for normal distribution
+none dInvGaussian(MEAN,SHAPE)          Inverse Gaussian distribution
+NLP  pdfInvGaussian(x,MEAN,SHAPE)      Probability density function for inverse Gaussian distribution
+NLP  cdfInvGaussian(x,MEAN,SHAPE)      Cumulative distribution function for inverse Gaussian distribution
+NLP  icdfInvGaussian(x,MEAN,SHAPE)     Inverse cumulative distribution function for inverse Gaussian distribution
+none dRayleigh(SIGMA)                  Rayleigh distribution
+NLP  pdfRayleigh(x,SIGMA)              Probability density function for Rayleigh distribution
+NLP  cdfRayleigh(x,SIGMA)              Cumulative distribution function for Rayleigh distribution
+NLP  icdfRayleigh(x,SIGMA)             Inverse cumulative distribution function for Rayleigh distribution
+none dCauchy(LOCATION,SCALE)           Cauchy distribution
+NLP  pdfCauchy(x,LOCATION,SCALE)       Probability density function for Cauchy distribution
+NLP  cdfCauchy(x,LOCATION,SCALE)       Cumulative distribution function for Cauchy distribution
+NLP  icdfCauchy(x,LOCATION,SCALE)      Inverse cumulative distribution function for Cauchy distribution
+none dLognormal(LOCATION,SCALE)        Lognormal distribution
+NLP  pdfLognormal(x,LOCATION,SCALE)    Probability density function for Lognormal distribution
+NLP  cdfLognormal(x,LOCATION,SCALE)    Cumulative distribution function for Lognormal distribution
+NLP  icdfLognormal(x,LOCATION,SCALE)   Inverse cumulative distribution function for Lognormal distribution
+none dExponential(LAMBDA)              Exponential distribution
+NLP  pdfExponential(x,LAMBDA)          Probability density function for Exponential distribution
+NLP  cdfExponential(x,LAMBDA)          Cumulative distribution function for Exponential distribution
+NLP  icdfExponential(x,LAMBDA)         Inverse cumulative distribution function for Exponential distribution
+none dLogistic(LOCATION,SCALE)         Logistic distribution
+NLP  pdfLogistic(x,LOCATION,SCALE)     Probability density function for Logistic distribution
+NLP  cdfLogistic(x,LOCATION,SCALE)     Cumulative distribution function for Logistic distribution
+NLP  icdfLogistic(x,LOCATION,SCALE)    Inverse cumulative distribution function for Logistic distribution
+none dGamma(SHAPE,SCALE)               Gamma distribution
+NLP  pdfGamma(x,SHAPE,SCALE)           Probability density function for Gamma distribution
+NLP  cdfGamma(x,SHAPE,SCALE)           Cumulative distribution function for Gamma distribution
+NLP  icdfGamma(x,SHAPE,SCALE)          Inverse cumulative distribution function for Gamma distribution
+none dChiSquare(DF)                    Chi square distribution
+NLP  pdfChiSquare(x,DF)                Probability density function for Chi square distribution
+NLP  cdfChiSquare(x,DF)                Cumulative distribution function for Chi square distribution
+NLP  icdfChiSquare(x,DF)               Inverse cumulative distribution function for Chi square distribution
+none dWeibull(SHAPE,SCALE)             Weibull distribution
+NLP  pdfWeibull(x,SHAPE,SCALE)         Probability density function for Weibull distribution
+NLP  cdfWeibull(x,SHAPE,SCALE)         Cumulative distribution function for Weibull distribution
+NLP  icdfWeibull(x,SHAPE,SCALE)        Inverse cumulative distribution function for Weibull distribution
+none dBeta(SHAPE_1,SHAPE_2)            Beta distribution
+NLP  pdfBeta(x,SHAPE_1,SHAPE_2)        Probability density function for Beta distribution
+NLP  cdfBeta(x,SHAPE_1,SHAPE_2)        Cumulative distribution function for Beta distribution
+NLP  icdfBeta(x,SHAPE_1,SHAPE_2)       Inverse cumulative distribution function for Beta distribution
+none dF(DF_1,DF_2)                     F distribution
+NLP  pdfF(x,DF_1,DF_2)                 Probability density function for F distribution
+NLP  cdfF(x,DF_1,DF_2)                 Cumulative distribution function for F distribution
+NLP  icdfF(x,DF_1,DF_2)                Inverse cumulative distribution function for F distribution
+none dStudentT(DF)                     Students T distribution
+NLP  pdfStudentT(x,DF)                 Probability density function for Students T distribution
+NLP  cdfStudentT(x,DF)                 Cumulative distribution function for Students T distribution
+NLP  icdfStudentT(x,DF)                Inverse cumulative distribution function for Students T distribution
+none dPareto(SCALE,SHAPE)              Pareto distribution
+NLP  pdfPareto(x,SCALE,SHAPE)          Probability density function for Pareto distribution
+NLP  cdfPareto(x,SCALE,SHAPE)          Cumulative distribution function for Pareto distribution
+NLP  icdfPareto(x,SCALE,SHAPE)         Inverse cumulative distribution function for Pareto distribution
+none dGumbel(LOCATION,SCALE)           Gumbel distribution
+NLP  pdfGumbel(x,LOCATION,SCALE)       Probability density function for Gumbel distribution
+NLP  cdfGumbel(x,LOCATION,SCALE)       Cumulative distribution function for Gumbel distribution
+NLP  icdfGumbel(x,LOCATION,SCALE)      Inverse cumulative distribution function for Gumbel distribution
+none dLaplace(MEAN,SCALE)              Laplace distribution
+DNLP pdfLaplace(x,MEAN,SCALE)          Probability density function for Laplace distribution
+DNLP cdfLaplace(x,MEAN,SCALE)          Cumulative distribution function for Laplace distribution
+DNLP icdfLaplace(x,MEAN,SCALE)         Inverse cumulative distribution function for Laplace distribution
+none dTriangular(LOW,MID,HIGH)         Triangular distribution
+DNLP pdfTriangular(x,LOW,MID,HIGH)     Probability density function for Triangular distribution
+DNLP cdfTriangular(x,LOW,MID,HIGH)     Cumulative distribution function for Triangular distribution
+DNLP icdfTriangular(x,LOW,MID,HIGH)    Inverse cumulative distribution function for Triangular distribution
+none dUniformInt(LOW,HIGH)             Uniform integer distribution
+none pdfUniformInt(x,LOW,HIGH)         Probability density function for Uniform integer distribution
+none cdfUniformInt(x,LOW,HIGH)         Cumulative distribution function for Uniform integer distribution
+none icdfUniformInt(x,LOW,HIGH)        Inverse cumulative distribution function for Uniform integer distribution
+none dBinomial(N,P)                    Binomial distribution
+none pdfBinomial(x,N,P)                Probability density function for Binomial distribution
+none cdfBinomial(x,N,P)                Cumulative distribution function for Binomial distribution
+none icdfBinomial(x,N,P)               Inverse cumulative distribution function for Binomial distribution
+none dNegBinomial(FAILURES,P)          Negative Binomial distribution
+none pdfNegBinomial(x,FAILURES,P)      Probability density function for Negative Binomial distribution
+none cdfNegBinomial(x,FAILURES,P)      Cumulative distribution function for Negative Binomial distribution
+none icdfNegBinomial(x,FAILURES,P)     Inverse cumulative distribution function for Negative Binomial distribution
+none dGeometric(P)                     Geometric distribution
+none pdfGeometric(x,P)                 Probability density function for Geometric distribution
+none cdfGeometric(x,P)                 Cumulative distribution function for Geometric distribution
+none icdfGeometric(x,P)                Inverse cumulative distribution function for Geometric distribution
+none dHyperGeo(TOTAL,GOOD,TRIALS)      HyperGeometric distribution
+none pdfHyperGeo(x,TOTAL,GOOD,TRIALS)  Probability density function for HyperGeometric distribution
+none cdfHyperGeo(x,TOTAL,GOOD,TRIALS)  Cumulative distribution function for HyperGeometric distribution
+none icdfHyperGeo(x,TOTAL,GOOD,TRIALS) Inverse cumulative distribution function for HyperGeometric distribution
+none dLogarithmic(P-FACTOR)            Logarithmic distribution
+none pdfLogarithmic(x,P-FACTOR)        Probability density function for Logarithmic distribution
+none cdfLogarithmic(x,P-FACTOR)        Cumulative distribution function for Logarithmic distribution
+none icdfLogarithmic(x,P-FACTOR)       Inverse cumulative distribution function for Logarithmic distribution
+none dPoisson(LAMBDA)                  Poisson distribution
+none pdfPoisson(x,LAMBDA)              Probability density function for Poisson distribution
+none cdfPoisson(x,LAMBDA)              Cumulative distribution function for Poisson distribution
+none icdfPoisson(x,LAMBDA)             Inverse cumulative distribution function for Poisson distribution
+
+   3  function icdfnorm /stolib.icdfnormal/;
+   4   
+   5  SETS
+   6  i 'potraviny'
+   7  j 'nutrienty'
+   8  s 'scenare' /s1*s5/;
+   9   
+  10   
+  11  DISPLAY s;
+  12   
+  15   
+GDXIN   C:\Users\ironl\Documents\gamsdir\projdir\potraviny.gdx
+--- LOAD  i = 2:Dim1
+--- LOAD  j = 3:Dim2
+  19   
+  20  PARAMETER nutr(i,j) 'potraviny nutrienty';
+--- LOAD  nutr = 1:nutr
+  23  DISPLAY i, j, nutr;
+  24   
+  27   
+GDXIN   C:\Users\ironl\Documents\gamsdir\projdir\ceny-velkoobchod.gdx
+  29  PARAMETER v(i) 'ceny velkooobchod';
+--- LOAD  v = 1:v
+  32  DISPLAY i, v;
+  33   
+  34   
+  37   
+GDXIN   C:\Users\ironl\Documents\gamsdir\projdir\ceny-maloobchod.gdx
+  39  PARAMETER m(i) 'ceny malooobchod';
+--- LOAD  m = 1:m
+  42  DISPLAY i, m;
+  43   
+  46   
+GDXIN   C:\Users\ironl\Documents\gamsdir\projdir\sugar.gdx
+  48  PARAMETER sug(i) 'ceny velkooobchod';
+--- LOAD  sug = 1:sug
+  51  DISPLAY i, sug;
+  52   
+  53  PARAMETERS
+  54  kvantil 'kvantil' /0.95/
+  55  max_sugar 'pevne maximum konzumovaneho cukru' /36/
+  56  max_kcal  'pevne maximum konzumovanych kalorii' /3500/
+  57  p(s) 'pravdepodobnost scenare s'
+  58  /s1 0, s2 0, s3 0, s4 0, s5 1/
+  59   
+  60  */s1 0.061112977, s2 0.242105585, s3 0.393562877, s4 0.242105585, s5 0.056112977/
+  61   
+  62  ;
+  63  TABLE nutr_req(j, s) 'nutrition pozadovane hodnoty scenaru'
+  64   
+  65              s1      s2      s3    s4     s5
+  66  kcal        2106    2380    2653  2926   3200
+  67  protein     137     154    172   190        207
+  68  carbs       237     267    298   329        359
+  69  fat         68      77      86    95     104
+  70  ;
+  71   
+  72  POSITIVE VARIABLES
+  73  vx(i) 'mnozstvi nakoupeno ve velkoobchode'
+  74  mx(i, s) 'mnozstvi dokooupeno v maloobchode'
+  75   
+  76   
+  77  FREE VARIABLE z 'hodnota OF';
+  78   
+  79  EQUATIONS
+  80  OF                   'ucelova funkce'
+  81  NUTRIENTS_CON    'minimalni nutrienty'
+  82  SUGAR_CON        'omezeni cukru'
+  83  MAX_SOY_PROTEIN     'omezeni suplementace sojovym proteinem'
+  84  ;
+  85   
+  86  OF..                        sum((i, s), vx(i)*v(i) + p(s)*mx(i, s)*m(i))                         =e=     z;
+  87  NUTRIENTS_CON(j, s)..       sum(i, vx(i)*nutr(i, j) + mx(i, s)*nutr(i, j))                       =e=     nutr_req(j, s);
+  88  SUGAR_CON(s)..              sum(i, vx(i)*sug(i) + mx(i, s)*sug(i))                               =l=     max_sugar;
+  89  MAX_SOY_PROTEIN(s)..        vx('sojovy protein') + mx('sojovy protein', s)                       =l=     100000;
+  90   
+  91  MODEL potraviny /all/;
+  92  SOLVE potraviny USING LP minimizing z;
+GAMS 34.2.0  r6925a71 Released Feb  5, 2021 WEX-WEI x86 64bit/MS Windows - 05/02/21 06:54:50 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
+
+     1        1 INPUT          0       0  C:\Users\ironl\Documents\gamsdir\projdir\potraviny-opt-stredni-hodnoty.gms
+     2        2 FUNCLIBIN      1       2  stodclib
+     3       13 CALL           1      13  csv2gdx potraviny.csv id=nutr index=1 values=2..5 useHeader=y trace=0 output=potraviny.gdx
+     4       16 GDXIN          1      16  C:\Users\ironl\Documents\gamsdir\projdir\potraviny.gdx
+     5       25 CALL           1      25  csv2gdx potraviny.csv id=v index=1 values=7 useHeader=y trace=0 output=ceny-velkoobchod.gdx
+     6       28 GDXIN          1      28  C:\Users\ironl\Documents\gamsdir\projdir\ceny-velkoobchod.gdx
+     7       35 CALL           1      35  csv2gdx potraviny.csv id=m index=1 values=8 useHeader=y trace=0 output=ceny-maloobchod.gdx
+     8       38 GDXIN          1      38  C:\Users\ironl\Documents\gamsdir\projdir\ceny-maloobchod.gdx
+     9       44 CALL           1      44  csv2gdx potraviny.csv id=sug index=1 values=6 useHeader=y trace=0 output=sugar.gdx
+    10       47 GDXIN          1      47  C:\Users\ironl\Documents\gamsdir\projdir\sugar.gdx
+
+
+COMPILATION TIME     =        0.093 SECONDS      3 MB  34.2.0 r6925a71 WEX-WEI
+GAMS 34.2.0  r6925a71 Released Feb  5, 2021 WEX-WEI x86 64bit/MS Windows - 05/02/21 06:54:50 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----     11 SET s  scenare
+
+s1,    s2,    s3,    s4,    s5
+
+
+----     23 SET i  potraviny
+
+spagety semolinove,    tofu uzene        ,    tempeh marinovany ,    banan             ,    avokado           ,    orechy vlasske    ,    ryze jasminova    ,    ovesne vlocky     ,    sojovy protein    
+
+
+----     23 SET j  nutrienty
+
+kcal   ,    protein,    carbs  ,    fat    
+
+
+----     23 PARAMETER nutr  potraviny nutrienty
+
+                          kcal     protein       carbs         fat
+
+spagety semolinove     354.000      12.000      70.000       1.000
+tofu uzene             139.000      17.000       3.400       9.900
+tempeh marinovany      321.000      20.000      11.000      23.000
+banan                   94.000       1.000      22.000       0.200
+avokado                248.000       2.000       6.000      23.000
+orechy vlasske         691.000      16.000      18.000      63.000
+ryze jasminova         350.000       5.000      81.000       0.800
+ovesne vlocky          593.000      12.000      65.000       4.600
+sojovy protein         339.000      81.000       5.000       1.000
+
+
+----     32 SET i  potraviny
+
+spagety semolinove,    tofu uzene        ,    tempeh marinovany ,    banan             ,    avokado           ,    orechy vlasske    ,    ryze jasminova    ,    ovesne vlocky     ,    sojovy protein    
+
+
+----     32 PARAMETER v  ceny velkooobchod
+
+spagety semolinove  5.980,    tofu uzene         15.000,    tempeh marinovany  25.000,    banan               2.690,    avokado            40.000,    orechy vlasske     39.950,    ryze jasminova      5.000,    ovesne vlocky       5.980,    sojovy protein     16.000
+
+
+----     42 SET i  potraviny
+
+spagety semolinove,    tofu uzene        ,    tempeh marinovany ,    banan             ,    avokado           ,    orechy vlasske    ,    ryze jasminova    ,    ovesne vlocky     ,    sojovy protein    
+
+
+----     42 PARAMETER m  ceny malooobchod
+
+spagety semolinove      7.774,    tofu uzene             19.500,    tempeh marinovany      32.500,    banan                   3.497,    avokado                52.000,    orechy vlasske         51.935,    ryze jasminova          6.500,    ovesne vlocky           7.774,    sojovy protein     100000.000
+
+
+----     51 SET i  potraviny
+
+spagety semolinove,    tofu uzene        ,    tempeh marinovany ,    banan             ,    avokado           ,    orechy vlasske    ,    ryze jasminova    ,    ovesne vlocky     ,    sojovy protein    
+
+
+----     51 PARAMETER sug  ceny velkooobchod
+
+spagety semolinove  3.000,    tofu uzene          0.600,    banan              19.000,    orechy vlasske      4.000,    ryze jasminova      0.500,    ovesne vlocky       1.000,    sojovy protein      2.000
+
+GAMS 34.2.0  r6925a71 Released Feb  5, 2021 WEX-WEI x86 64bit/MS Windows - 05/02/21 06:54:50 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE potraviny Using LP From line 92
+
+
+---- OF  =E=  ucelova funkce
+
+OF..  29.9*vx(spagety semolinove) + 75*vx(tofu uzene) + 125*vx(tempeh marinovany) + 13.45*vx(banan) + 200*vx(avokado) + 199.75*vx(orechy vlasske) + 25*vx(ryze jasminova) + 29.9*vx(ovesne vlocky) + 80*vx(sojovy protein) + 7.774*mx(spagety semolinove,s5) + 19.5*mx(tofu uzene,s5) + 32.5*mx(tempeh marinovany,s5) + 3.497*mx(banan,s5) + 52*mx(avokado,s5) + 51.935*mx(orechy vlasske,s5) + 6.5*mx(ryze jasminova,s5) + 7.774*mx(ovesne vlocky,s5) + 100000*mx(sojovy protein,s5) - z =E= 0 ; (LHS = 0)
+     
+
+---- NUTRIENTS_CON  =E=  minimalni nutrienty
+
+NUTRIENTS_CON(kcal,s1)..  354*vx(spagety semolinove) + 139*vx(tofu uzene) + 321*vx(tempeh marinovany) + 94*vx(banan) + 248*vx(avokado) + 691*vx(orechy vlasske) + 350*vx(ryze jasminova) + 593*vx(ovesne vlocky) + 339*vx(sojovy protein) + 354*mx(spagety semolinove,s1) + 139*mx(tofu uzene,s1) + 321*mx(tempeh marinovany,s1) + 94*mx(banan,s1) + 248*mx(avokado,s1) + 691*mx(orechy vlasske,s1) + 350*mx(ryze jasminova,s1) + 593*mx(ovesne vlocky,s1) + 339*mx(sojovy protein,s1) =E= 2106 ; (LHS = 0, INFES = 2106 ****)
+     
+NUTRIENTS_CON(kcal,s2)..  354*vx(spagety semolinove) + 139*vx(tofu uzene) + 321*vx(tempeh marinovany) + 94*vx(banan) + 248*vx(avokado) + 691*vx(orechy vlasske) + 350*vx(ryze jasminova) + 593*vx(ovesne vlocky) + 339*vx(sojovy protein) + 354*mx(spagety semolinove,s2) + 139*mx(tofu uzene,s2) + 321*mx(tempeh marinovany,s2) + 94*mx(banan,s2) + 248*mx(avokado,s2) + 691*mx(orechy vlasske,s2) + 350*mx(ryze jasminova,s2) + 593*mx(ovesne vlocky,s2) + 339*mx(sojovy protein,s2) =E= 2380 ; (LHS = 0, INFES = 2380 ****)
+     
+NUTRIENTS_CON(kcal,s3)..  354*vx(spagety semolinove) + 139*vx(tofu uzene) + 321*vx(tempeh marinovany) + 94*vx(banan) + 248*vx(avokado) + 691*vx(orechy vlasske) + 350*vx(ryze jasminova) + 593*vx(ovesne vlocky) + 339*vx(sojovy protein) + 354*mx(spagety semolinove,s3) + 139*mx(tofu uzene,s3) + 321*mx(tempeh marinovany,s3) + 94*mx(banan,s3) + 248*mx(avokado,s3) + 691*mx(orechy vlasske,s3) + 350*mx(ryze jasminova,s3) + 593*mx(ovesne vlocky,s3) + 339*mx(sojovy protein,s3) =E= 2653 ; (LHS = 0, INFES = 2653 ****)
+     
+REMAINING 17 ENTRIES SKIPPED
+
+
+---- SUGAR_CON  =L=  omezeni cukru
+
+SUGAR_CON(s1)..  3*vx(spagety semolinove) + 0.6*vx(tofu uzene) + 19*vx(banan) + 4*vx(orechy vlasske) + 0.5*vx(ryze jasminova) + vx(ovesne vlocky) + 2*vx(sojovy protein) + 3*mx(spagety semolinove,s1) + 0.6*mx(tofu uzene,s1) + 19*mx(banan,s1) + 4*mx(orechy vlasske,s1) + 0.5*mx(ryze jasminova,s1) + mx(ovesne vlocky,s1) + 2*mx(sojovy protein,s1) =L= 36 ; (LHS = 0)
+     
+SUGAR_CON(s2)..  3*vx(spagety semolinove) + 0.6*vx(tofu uzene) + 19*vx(banan) + 4*vx(orechy vlasske) + 0.5*vx(ryze jasminova) + vx(ovesne vlocky) + 2*vx(sojovy protein) + 3*mx(spagety semolinove,s2) + 0.6*mx(tofu uzene,s2) + 19*mx(banan,s2) + 4*mx(orechy vlasske,s2) + 0.5*mx(ryze jasminova,s2) + mx(ovesne vlocky,s2) + 2*mx(sojovy protein,s2) =L= 36 ; (LHS = 0)
+     
+SUGAR_CON(s3)..  3*vx(spagety semolinove) + 0.6*vx(tofu uzene) + 19*vx(banan) + 4*vx(orechy vlasske) + 0.5*vx(ryze jasminova) + vx(ovesne vlocky) + 2*vx(sojovy protein) + 3*mx(spagety semolinove,s3) + 0.6*mx(tofu uzene,s3) + 19*mx(banan,s3) + 4*mx(orechy vlasske,s3) + 0.5*mx(ryze jasminova,s3) + mx(ovesne vlocky,s3) + 2*mx(sojovy protein,s3) =L= 36 ; (LHS = 0)
+     
+REMAINING 2 ENTRIES SKIPPED
+
+
+---- MAX_SOY_PROTEIN  =L=  omezeni suplementace sojovym proteinem
+
+MAX_SOY_PROTEIN(s1)..  vx(sojovy protein) + mx(sojovy protein,s1) =L= 100000 ; (LHS = 0)
+     
+MAX_SOY_PROTEIN(s2)..  vx(sojovy protein) + mx(sojovy protein,s2) =L= 100000 ; (LHS = 0)
+     
+MAX_SOY_PROTEIN(s3)..  vx(sojovy protein) + mx(sojovy protein,s3) =L= 100000 ; (LHS = 0)
+     
+REMAINING 2 ENTRIES SKIPPED
+
+GAMS 34.2.0  r6925a71 Released Feb  5, 2021 WEX-WEI x86 64bit/MS Windows - 05/02/21 06:54:50 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE potraviny Using LP From line 92
+
+
+---- vx  mnozstvi nakoupeno ve velkoobchode
+
+vx(spagety semolinove)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       29.9     OF
+      354       NUTRIENTS_CON(kcal,s1)
+      354       NUTRIENTS_CON(kcal,s2)
+      354       NUTRIENTS_CON(kcal,s3)
+      354       NUTRIENTS_CON(kcal,s4)
+      354       NUTRIENTS_CON(kcal,s5)
+       12       NUTRIENTS_CON(protein,s1)
+       12       NUTRIENTS_CON(protein,s2)
+       12       NUTRIENTS_CON(protein,s3)
+       12       NUTRIENTS_CON(protein,s4)
+       12       NUTRIENTS_CON(protein,s5)
+       70       NUTRIENTS_CON(carbs,s1)
+       70       NUTRIENTS_CON(carbs,s2)
+       70       NUTRIENTS_CON(carbs,s3)
+       70       NUTRIENTS_CON(carbs,s4)
+       70       NUTRIENTS_CON(carbs,s5)
+        1       NUTRIENTS_CON(fat,s1)
+        1       NUTRIENTS_CON(fat,s2)
+        1       NUTRIENTS_CON(fat,s3)
+        1       NUTRIENTS_CON(fat,s4)
+        1       NUTRIENTS_CON(fat,s5)
+        3       SUGAR_CON(s1)
+        3       SUGAR_CON(s2)
+        3       SUGAR_CON(s3)
+        3       SUGAR_CON(s4)
+        3       SUGAR_CON(s5)
+
+vx(tofu uzene)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       75       OF
+      139       NUTRIENTS_CON(kcal,s1)
+      139       NUTRIENTS_CON(kcal,s2)
+      139       NUTRIENTS_CON(kcal,s3)
+      139       NUTRIENTS_CON(kcal,s4)
+      139       NUTRIENTS_CON(kcal,s5)
+       17       NUTRIENTS_CON(protein,s1)
+       17       NUTRIENTS_CON(protein,s2)
+       17       NUTRIENTS_CON(protein,s3)
+       17       NUTRIENTS_CON(protein,s4)
+       17       NUTRIENTS_CON(protein,s5)
+        3.4     NUTRIENTS_CON(carbs,s1)
+        3.4     NUTRIENTS_CON(carbs,s2)
+        3.4     NUTRIENTS_CON(carbs,s3)
+        3.4     NUTRIENTS_CON(carbs,s4)
+        3.4     NUTRIENTS_CON(carbs,s5)
+        9.9     NUTRIENTS_CON(fat,s1)
+        9.9     NUTRIENTS_CON(fat,s2)
+        9.9     NUTRIENTS_CON(fat,s3)
+        9.9     NUTRIENTS_CON(fat,s4)
+        9.9     NUTRIENTS_CON(fat,s5)
+        0.6     SUGAR_CON(s1)
+        0.6     SUGAR_CON(s2)
+        0.6     SUGAR_CON(s3)
+        0.6     SUGAR_CON(s4)
+        0.6     SUGAR_CON(s5)
+
+vx(tempeh marinovany)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+      125       OF
+      321       NUTRIENTS_CON(kcal,s1)
+      321       NUTRIENTS_CON(kcal,s2)
+      321       NUTRIENTS_CON(kcal,s3)
+      321       NUTRIENTS_CON(kcal,s4)
+      321       NUTRIENTS_CON(kcal,s5)
+       20       NUTRIENTS_CON(protein,s1)
+       20       NUTRIENTS_CON(protein,s2)
+       20       NUTRIENTS_CON(protein,s3)
+       20       NUTRIENTS_CON(protein,s4)
+       20       NUTRIENTS_CON(protein,s5)
+       11       NUTRIENTS_CON(carbs,s1)
+       11       NUTRIENTS_CON(carbs,s2)
+       11       NUTRIENTS_CON(carbs,s3)
+       11       NUTRIENTS_CON(carbs,s4)
+       11       NUTRIENTS_CON(carbs,s5)
+       23       NUTRIENTS_CON(fat,s1)
+       23       NUTRIENTS_CON(fat,s2)
+       23       NUTRIENTS_CON(fat,s3)
+       23       NUTRIENTS_CON(fat,s4)
+       23       NUTRIENTS_CON(fat,s5)
+
+REMAINING 6 ENTRIES SKIPPED
+
+---- mx  mnozstvi dokooupeno v maloobchode
+
+mx(spagety semolinove,s1)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+      354       NUTRIENTS_CON(kcal,s1)
+       12       NUTRIENTS_CON(protein,s1)
+       70       NUTRIENTS_CON(carbs,s1)
+        1       NUTRIENTS_CON(fat,s1)
+        3       SUGAR_CON(s1)
+
+mx(spagety semolinove,s2)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+      354       NUTRIENTS_CON(kcal,s2)
+       12       NUTRIENTS_CON(protein,s2)
+       70       NUTRIENTS_CON(carbs,s2)
+        1       NUTRIENTS_CON(fat,s2)
+        3       SUGAR_CON(s2)
+
+mx(spagety semolinove,s3)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+      354       NUTRIENTS_CON(kcal,s3)
+       12       NUTRIENTS_CON(protein,s3)
+       70       NUTRIENTS_CON(carbs,s3)
+        1       NUTRIENTS_CON(fat,s3)
+        3       SUGAR_CON(s3)
+
+REMAINING 42 ENTRIES SKIPPED
+
+---- z  hodnota OF
+
+z
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+       -1       OF
+
+GAMS 34.2.0  r6925a71 Released Feb  5, 2021 WEX-WEI x86 64bit/MS Windows - 05/02/21 06:54:50 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE potraviny Using LP From line 92
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           4     SINGLE EQUATIONS           31
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES           55
+NON ZERO ELEMENTS           459
+
+
+GENERATION TIME      =        0.016 SECONDS      4 MB  34.2.0 r6925a71 WEX-WEI
+GAMS 34.2.0  r6925a71 Released Feb  5, 2021 WEX-WEI x86 64bit/MS Windows - 05/02/21 06:54:50 Page 7
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE potraviny Using LP From line 92
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   potraviny           OBJECTIVE  z
+     TYPE    LP                  DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  92
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE              214.5210
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT        17    2147483647
+--- *** This solver runs with a demo license. No commercial use.
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 20.1.0.0 link memory 0.00 Mb (peak 0.01 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.23 ticks)
+
+
+Optimal solution found
+Objective:          214.520990
+
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU OF                  .              .              .            -1.0000      
+
+  OF  ucelova funkce
+
+---- EQU NUTRIENTS_CON  minimalni nutrienty
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+kcal   .s1      2106.0000      2106.0000      2106.0000         EPS         
+kcal   .s2      2380.0000      2380.0000      2380.0000         EPS         
+kcal   .s3      2653.0000      2653.0000      2653.0000         EPS         
+kcal   .s4      2926.0000      2926.0000      2926.0000         EPS         
+kcal   .s5      3200.0000      3200.0000      3200.0000        -0.0107      
+protein.s1       137.0000       137.0000       137.0000         EPS         
+protein.s2       154.0000       154.0000       154.0000         EPS         
+protein.s3       172.0000       172.0000       172.0000         EPS         
+protein.s4       190.0000       190.0000       190.0000         EPS         
+protein.s5       207.0000       207.0000       207.0000         0.8045      
+carbs  .s1       237.0000       237.0000       237.0000         EPS         
+carbs  .s2       267.0000       267.0000       267.0000         EPS         
+carbs  .s3       298.0000       298.0000       298.0000         EPS         
+carbs  .s4       329.0000       329.0000       329.0000         EPS         
+carbs  .s5       359.0000       359.0000       359.0000         0.0167      
+fat    .s1        68.0000        68.0000        68.0000         EPS         
+fat    .s2        77.0000        77.0000        77.0000         EPS         
+fat    .s3        86.0000        86.0000        86.0000         EPS         
+fat    .s4        95.0000        95.0000        95.0000         EPS         
+fat    .s5       104.0000       104.0000       104.0000         0.7324      
+
+---- EQU SUGAR_CON  omezeni cukru
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+s1        -INF            3.0032        36.0000          .          
+s2        -INF            4.7619        36.0000          .          
+s3        -INF            5.3360        36.0000          .          
+s4        -INF            5.9176        36.0000          .          
+s5        -INF           18.2995        36.0000          .          
+
+---- EQU MAX_SOY_PROTEIN  omezeni suplementace sojovym proteinem
+
+          LOWER          LEVEL          UPPER         MARGINAL
+
+s1        -INF            0.8284    100000.0000          .          
+s2        -INF            1.6398    100000.0000          .          
+s3        -INF            1.8120    100000.0000          .          
+s4        -INF            1.9779    100000.0000          .          
+s5        -INF             .        100000.0000          .          
+
+---- VAR vx  mnozstvi nakoupeno ve velkoobchode
+
+                          LOWER          LEVEL          UPPER         MARGINAL
+
+spagety semolinove          .              .            +INF           22.1260      
+tofu uzene                  .              .            +INF           55.5000      
+tempeh marinovany           .              .            +INF           95.3088      
+banan                       .              .            +INF           13.1358      
+avokado                     .              .            +INF          184.0939      
+orechy vlasske              .              .            +INF          147.8150      
+ryze jasminova              .              .            +INF           22.7777      
+ovesne vlocky               .              .            +INF           22.1260      
+sojovy protein              .              .            +INF           17.6389      
+
+---- VAR mx  mnozstvi dokooupeno v maloobchode
+
+                             LOWER          LEVEL          UPPER         MARGINAL
+
+spagety semolinove.s1          .              .            +INF            EPS         
+spagety semolinove.s2          .              .            +INF            EPS         
+spagety semolinove.s3          .              .            +INF            EPS         
+spagety semolinove.s4          .              .            +INF            EPS         
+spagety semolinove.s5          .             3.8580        +INF             .          
+tofu uzene        .s1          .              .            +INF            EPS         
+tofu uzene        .s2          .              .            +INF            EPS         
+tofu uzene        .s3          .             0.1006        +INF             .          
+tofu uzene        .s4          .             0.2302        +INF             .          
+tofu uzene        .s5          .             8.6882        +INF             .          
+tempeh marinovany .s1          .             2.8052        +INF             .          
+tempeh marinovany .s2          .              .            +INF            EPS         
+tempeh marinovany .s3          .              .            +INF            EPS         
+tempeh marinovany .s4          .              .            +INF            EPS         
+tempeh marinovany .s5          .              .            +INF            2.8088      
+banan             .s1          .              .            +INF            EPS         
+banan             .s2          .              .            +INF            EPS         
+banan             .s3          .              .            +INF            EPS         
+banan             .s4          .              .            +INF            EPS         
+banan             .s5          .              .            +INF            3.1828      
+avokado           .s1          .              .            +INF            EPS         
+avokado           .s2          .             3.1729        +INF             .          
+avokado           .s3          .             3.5022        +INF             .          
+avokado           .s4          .             3.8185        +INF             .          
+avokado           .s5          .              .            +INF           36.0939      
+orechy vlasske    .s1          .              .            +INF            EPS         
+orechy vlasske    .s2          .              .            +INF            EPS         
+orechy vlasske    .s3          .              .            +INF            EPS         
+orechy vlasske    .s4          .              .            +INF            EPS         
+orechy vlasske    .s5          .             0.1608        +INF             .          
+ryze jasminova    .s1          .             2.3605        +INF             .          
+ryze jasminova    .s2          .             2.9569        +INF             .          
+ryze jasminova    .s3          .             3.3035        +INF             .          
+ryze jasminova    .s4          .             3.6471        +INF             .          
+ryze jasminova    .s5          .              .            +INF            4.2777      
+ovesne vlocky     .s1          .             0.1662        +INF             .          
+ovesne vlocky     .s2          .             0.0039        +INF             .          
+ovesne vlocky     .s3          .              .            +INF            EPS         
+ovesne vlocky     .s4          .              .            +INF            EPS         
+ovesne vlocky     .s5          .             0.8693        +INF             .          
+sojovy protein    .s1          .             0.8284        +INF             .          
+sojovy protein    .s2          .             1.6398        +INF             .          
+sojovy protein    .s3          .             1.8120        +INF             .          
+sojovy protein    .s4          .             1.9779        +INF             .          
+sojovy protein    .s5          .              .            +INF        99937.6389      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR z                 -INF          214.5210        +INF             .          
+
+  z  hodnota OF
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+
+
+EXECUTION TIME       =        0.047 SECONDS      4 MB  34.2.0 r6925a71 WEX-WEI
+
+
+USER: GAMS Demo license for Vit Chrubasik            G210215|0002CO-GEN
+      VSB Technical University of Ostrava, Czech Republic      DL032189
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\ironl\Documents\gamsdir\projdir\potraviny-opt-stredni-hodnoty.gms
+Output     C:\Users\ironl\Documents\gamsdir\projdir\potraviny-opt-stredni-hodnoty.lst

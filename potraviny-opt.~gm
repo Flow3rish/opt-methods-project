@@ -1,0 +1,65 @@
+
+$funclibin stolib stodclib
+function icdfnorm /stolib.icdfnormal/;
+
+SETS
+i 'potraviny'
+j 'nutrienty';
+
+
+$call csv2gdx potraviny.csv id=d index=1 values=2..6 useHeader=y trace=0 output=potraviny.gdx
+$ifE errorLevel<>0 $abort Problems reading potraviny.csv!
+
+$gdxIn potraviny.gdx
+$load i = dim1
+$load j = dim2
+
+PARAMETER d(i,j) 'potraviny nutrienty';
+$load d
+$gdxIn
+DISPLAY i, j, d;
+
+$call csv2gdx potraviny.csv id=v index=1 values=7 useHeader=y trace=0 output=ceny-velkoobchod.gdx
+$ifE errorLevel<>0 $abort Problems reading ceny-maloobchod.csv!
+
+$gdxIn ceny-velkoobchod.gdx
+PARAMETER v(i) 'ceny velkooobchod';
+$load v
+$gdxIn
+DISPLAY i, v;
+
+$call csv2gdx potraviny.csv id=m index=1 values=8 useHeader=y trace=0 output=ceny-maloobchod.gdx
+$ifE errorLevel<>0 $abort Problems reading ceny-maloobchod.csv!
+
+$gdxIn ceny-maloobchod.gdx
+PARAMETER m(i) 'ceny velkooobchod';
+$load m
+$gdxIn
+DISPLAY i, m;
+
+
+PARAMETERS
+kvantil 'kvantil' /0.95/
+max_sugar 'pevne maximum konzumovaneho cukru' /36/;
+
+PARAMETER nutr(j) 'dolni omezeni nutrientu';
+nutr('kcal')     = icdfnorm(kvantil, 2653, 300);
+nutr('protein')  = icdfnorm(kvantil, 172, 15);
+nutr('carbs')    = icdfnorm(kvantil, 298, 30);
+nutr('fat')      = icdfnorm(kvantil, 86, 10);
+nutr('sugar')    = 0;
+
+POSITIVE VARIABLES
+vx(i) 'mnozstvi nakoupeno ve velkoobchode'
+mx(i) 'mnozstvi dokooupeno v maloobchode'
+
+
+FREE VARIABLE z 'hodnota OF';
+
+EQUATIONS
+OF       'ucelova funkce'
+PVO1     'minimalni nutrienty'
+PVO2     'omezeni cukru';
+
+
+OF..     z   =e=     sum(i, vx(i)*v(i) + mx(i)*m(i));

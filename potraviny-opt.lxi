@@ -1,0 +1,31 @@
+B 3 C o m p i l a t i o n
+B 199 Include File Summary
+B 219 E x e c u t i o n
+I 219 s
+I 225 i
+I 230 j
+I 235 nutr
+I 250 i
+I 255 v
+I 260 i
+I 265 m
+I 270 i
+I 275 sug
+B 283 Equation Listing    SOLVE potraviny Using LP From line 94
+D 286 OF
+D 291 NUTRIENTS_CON
+D 302 SUGAR_CON
+D 313 MAX_SOY_PROTEIN
+B 325 Column Listing      SOLVE potraviny Using LP From line 94
+E 328 vx
+E 414 mx
+E 445 z
+B 453 Model Statistics    SOLVE potraviny Using LP From line 94
+B 466 Solution Report     SOLVE potraviny Using LP From line 94
+F 498 OF
+F 502 NUTRIENTS_CON
+F 527 SUGAR_CON
+F 537 MAX_SOY_PROTEIN
+G 547 vx
+G 561 mx
+G 613 z
